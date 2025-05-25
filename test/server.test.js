@@ -6,7 +6,7 @@ const server = supertest(app);
 const mockUser = {
     name: 'Clark Kent',
     email: 'clark@superman.com',
-    password: 'Krypt()n8',
+    password: 'Krypt@n8',
     preferences:['movies', 'comics']
 };
 
