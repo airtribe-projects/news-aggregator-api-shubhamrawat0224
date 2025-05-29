@@ -2,7 +2,7 @@ require('dotenv').config();
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const User = require('../models/User.model');
-
+// Signup controller function with input validation and password complexity check and preference validation.
 async function signup (req, res)  {
     const { name, email, password, preferences = [] } = req.body;
 
@@ -48,7 +48,7 @@ async function signup (req, res)  {
       res.status(500).json({ message: 'Server error during registration' });
     }
   };
-
+// Login controller function with input validation and password comparison.
   async function login (req, res) {
     const { email, password } = req.body;
     try {
@@ -64,7 +64,7 @@ async function signup (req, res)  {
       res.status(500).json({ message: err.message });
    }
   }
-
+// Get preferences controller function.
   async function getPreferences (req, res) {
     try {
       res.status(200).json({ preferences: req.user.preferences });
@@ -72,7 +72,7 @@ async function signup (req, res)  {
       res.status(500).json({ message: 'Server error' });
     }
   }
-
+// Update preferences controller function with input validation.
   async function updatePreferences (req, res) {
     const { preferences } = req.body;
 

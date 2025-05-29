@@ -1,6 +1,6 @@
 const axios = require('axios');
 
-
+// Get news from News API based on user preferences.
 async function getNews(req, res) {
 
     try {
